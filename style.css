@@ -2,31 +2,86 @@ a {
   color: rgb(0, 0, 0);
 }
 
-header {
-  background-color: rgb(245, 245, 245);
+body {
+  font-family: "Poppins" sans-serif;
 }
 
-nav {
-  background-color: rgba(0, 0, 255, 0.3);
+.page-header {
+  background-color: #bdbdbd;
 }
 
-h1 {
+.page-nav .link {
+  color: #00bcd4;
+}
+
+.page-nav .link:hover,
+.page-nav .link:focus {
+  color: #18ffff;
+}
+
+.page-nav .link:active {
+  color: #212121;
+}
+
+.page-title {
   color: #f44336;
+  font-family: "Georgia", serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+  font-family: "Oswald", sans-serif;
 }
 
-h2 {
+.section-title {
   color: #3f51b5;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
 }
 
-h3 {
+.section-text {
+  color: rgb(0, 0, 0);
+}
+
+.page-footer {
+  background-color: #212121;
+}
+
+.copyright-text {
+  color: #ffffff;
+}
+
+.club-list .title {
   color: #4caf50;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
 }
 
-a {
+.club-list .section-text {
+  color: #009688;
+}
+
+.club-list .link {
   color: #ffc107;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
 }
 
-#hero {
+.club-list .link:hover,
+.club-list .link:focus {
+  color: #f57f17;
+}
+
+.club-list .link:active {
+  color: #ff1744;
+}
+
+.benefits > li {
+  color: #d500f9;
+}
+
+/* #hero {
   color: #3f51b5;
 }
 #clubs {
@@ -37,4 +92,4 @@ a {
 }
 #programs {
   color: #ff9800;
-}
+} */
