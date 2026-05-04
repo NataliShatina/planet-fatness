@@ -15,6 +15,7 @@ body {
   background-color: #fafafa;
   line-height: 1.5;
   margin: 0;
+  padding-top: 80px;
 }
 
 *,
@@ -46,8 +47,8 @@ img {
   max-width: 100%;
 }
 
-.section {
-  border-top: 2px dashed #212121;
+main {
+  flex-grow: 1;
 }
 
 .container {
@@ -56,11 +57,33 @@ img {
   padding: 0 16px;
 }
 
+.section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px dashed #212121;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-header {
   margin-bottom: 20px;
   padding-top: 16px;
   padding-bottom: 16px;
   background-color: #e0e0e0;
+  /* position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: white;
 }
 
 .page-nav {
@@ -105,6 +128,22 @@ img {
   margin: 0 0 24px 0;
 }
 
+.cta-button {
+  padding: 12px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.cta-button:hover {
+  background-color: #e85f00;
+}
+
 .section-title {
   margin-bottom: 20px;
   font-size: 20px;
@@ -120,15 +159,10 @@ img {
   text-indent: 24px;
 }
 
-.page-footer {
-  margin-top: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #212121;
-}
-
-.copyright-text {
-  color: #ffffff;
+.club-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .club-list .title {
@@ -137,14 +171,12 @@ img {
   text-align: center;
 }
 
-/* .club-list .section-text {
-  color: #009688;
-} */
-
 .club-list .item {
+  flex-basis: calc((100% - 24px) / 3);
   border-radius: 8px;
   overflow: hidden;
 }
+
 .club-list .link {
   color: #ffc107;
   font-size: 14px;
@@ -161,9 +193,18 @@ img {
   color: #ff1744;
 }
 
-/* .benefits > li {
-  color: #d500f9;
-} */
+.benefits-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.benefits-item {
+  flex-basis: calc((100% - 32px) / 3);
+}
 
 .download {
   display: flex;
@@ -190,20 +231,83 @@ img {
   color: #f44336;
 }
 
+.contacts {
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+}
+
+/* текст зверху */
+.contacts > p {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* address */
+.contacts address {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* посилання */
+.contacts a {
+  color: #2f80ed;
+}
+
+.page-footer {
+  padding: 40px 0;
+  background-color: #212121;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Контакти */
+.footer-contacts {
+  max-width: 250px;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-contacts address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.footer-contacts a {
+  color: #2f80ed;
+}
+
+/* Соцмережі */
 .page-footer-list {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
-/* #hero {
-  color: #3f51b5;
+
+.page-footer-list a {
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
-#clubs {
-  color: #9c27b0;
+
+.page-footer-list a:hover {
+  transform: scale(1.1);
 }
-#benefits {
-  color: #00bcd4;
+
+/* Копірайт */
+.copyright-text {
+  max-width: 300px;
+  font-size: 14px;
+  color: #aaa;
 }
-#programs {
-  color: #ff9800;
-} */
