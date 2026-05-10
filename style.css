@@ -75,10 +75,6 @@ main {
   padding-top: 16px;
   padding-bottom: 16px;
   background-color: #e0e0e0;
-  /* position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: white; */
   position: fixed;
   top: 0;
   left: 0;
@@ -154,17 +150,6 @@ main {
 .hero-title:hover::before,
 .hero-title:hover::after {
   background-color: #03a9f4;
-}
-.page-title {
-  /* color: #f44336;
-  /* font-family: "Georgia", serif; */
-  /* font-size: 24px;
-  font-weight: 500;
-  font-style: italic;
-  text-align: center;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 4px #212121;
-  margin: 0 0 24px 0; */
 }
 
 .cta-button {
@@ -291,6 +276,11 @@ main {
   display: flex;
   gap: 8px;
   flex-direction: column;
+  margin-top: 20px;
+}
+
+.download li:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .download .plan-name {
