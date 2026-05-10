@@ -55,6 +55,7 @@ main {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 16px;
+  position: relative;
 }
 
 .section {
@@ -84,6 +85,7 @@ main {
   width: 100%;
   z-index: 1000;
   background: white;
+  background-image: linear-gradient(to right, #03a9f4, #212121);
 }
 
 .page-nav {
@@ -116,21 +118,58 @@ main {
   color: #212121;
 }
 
+.hero {
+  padding: 48px;
+  border-radius: 12px;
+  background-color: #212121;
+  color: #fafafa;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 255, 0.15), rgba(0, 0, 255, 0.15)),
+    url(https://ac.goit.global/fullstack/html-css-v2/module-4/autochecks/m04-human.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  margin-bottom: 24px;
+  font-size: 32px;
+  line-height: 1.333;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.hero-title::before,
+.hero-title::after {
+  width: 100px;
+  height: 2px;
+  background-color: #fff;
+  content: "";
+}
+
+.hero-title:hover::before,
+.hero-title:hover::after {
+  background-color: #03a9f4;
+}
 .page-title {
-  color: #f44336;
+  /* color: #f44336;
   /* font-family: "Georgia", serif; */
-  font-size: 24px;
+  /* font-size: 24px;
   font-weight: 500;
   font-style: italic;
   text-align: center;
   letter-spacing: 3px;
   text-shadow: 2px 2px 4px #212121;
-  margin: 0 0 24px 0;
+  margin: 0 0 24px 0; */
 }
 
 .cta-button {
   padding: 12px 20px;
-  background-color: #f44336;
+  background-color: #2f80ed;
   color: white;
   border: none;
   border-radius: 8px;
@@ -138,10 +177,34 @@ main {
   cursor: pointer;
   display: block;
   margin: 20px auto 0;
+  transition: transform 0.2s ease;
 }
 
 .cta-button:hover {
-  background-color: #e85f00;
+  background-color: #4c6cd5;
+  transform: scale(1.1);
+}
+
+.manager-chat-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #03a9f4;
+  box-shadow:
+    rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  position: fixed;
+  bottom: 32px;
+  left: calc((100vw - 960px) / 2 + 960px - 200px);
+  z-index: 1000;
+}
+
+.manager-chat-btn:hover {
+  background-color: #0288d1;
 }
 
 .section-title {
@@ -157,6 +220,7 @@ main {
   color: rgb(0, 0, 0);
   line-height: 1.5;
   text-indent: 24px;
+  margin-bottom: 8px;
 }
 
 .club-list {
@@ -166,40 +230,57 @@ main {
 }
 
 .club-list .title {
-  color: #4caf50;
+  margin-bottom: 8px;
   font-size: 16px;
-  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.33;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  padding: 8px 12px;
+  color: #fff;
+  background-color: #212121;
 }
 
 .club-list .item {
   flex-basis: calc((100% - 24px) / 3);
   border-radius: 8px;
   overflow: hidden;
+  box-shadow:
+    0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.club-list .content {
+  padding: 8px;
 }
 
 .club-list .link {
-  color: #ffc107;
-  font-size: 14px;
   font-weight: 500;
-  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  color: #2f80ed;
 }
 
 .club-list .link:hover,
 .club-list .link:focus {
-  color: #f57f17;
+  color: #03a9f4;
 }
 
 .club-list .link:active {
-  color: #ff1744;
+  color: #18ffff;
 }
 
 .benefits-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .benefits-item {
@@ -293,17 +374,44 @@ main {
 /* Соцмережі */
 .page-footer-list {
   display: flex;
-  gap: 12px;
+  gap: 4px;
+  flex-shrink: 0;
+  align-self: flex-end;
 }
 
-.page-footer-list a {
+.page-footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #03a9f4;
+  transition: transform 0.2s ease;
+  /* transform: scale(1.1); */
+}
+
+.page-footer-link:hover {
+  background-color: #fff;
+  transform: scale(1.1);
+}
+
+.page-footer-link .icon {
+  fill: #fff;
+}
+
+.page-footer-link .icon:hover {
+  fill: #03a9f4;
+  /* transform: scale(1.1); */
+}
+/* .page-footer-list a {
   display: inline-block;
   transition: transform 0.2s ease;
 }
 
 .page-footer-list a:hover {
   transform: scale(1.1);
-}
+} */
 
 /* Копірайт */
 .copyright-text {
